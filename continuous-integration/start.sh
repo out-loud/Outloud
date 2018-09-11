@@ -17,10 +17,6 @@ echo "### Testing"
 ./docker-test.sh $IMAGE_NAME $ENVIRONMENT
 echo -e "\n"
 
-echo "### Cleaning"
-./docker-clean.sh $IMAGE_NAME $ENVIRONMENT
-echo -e "\n"
-
 echo "### Publishing"
 ./docker-publish.sh $IMAGE_NAME $REGISTRY $BRANCH
 echo -e "\n"
