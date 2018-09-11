@@ -1,4 +1,6 @@
 #!/bin/bash
+
+cd ..
 REPOSITORIES=(Outloud.QuizService)
 for REPOSITORY in ${REPOSITORIES[*]}
 do
