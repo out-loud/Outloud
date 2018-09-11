@@ -1,6 +1,7 @@
 version: '3.4'
 services:
   outloud.quiz.service:
+    image: outloud.quiz.service
     build:
       context: ..
       dockerfile: Outloud.QuizService/Dockerfile
@@ -12,6 +13,7 @@ services:
     ports:
       - 5000:5000
   outloud.quiz.service.tests:
+    image: outloud.quiz.service.tests
     build:
       context: ..
       dockerfile: Outloud.QuizService/Dockerfile
