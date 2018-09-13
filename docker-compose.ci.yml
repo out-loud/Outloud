@@ -45,3 +45,27 @@ services:
       ASPNETCORE_URLS: 'http://+:5003'
       WAIT_HOSTS: ''
       WAIT_HOSTS_TIMEOUT: '60'
+
+  outloud.common:
+    image: outloud.common
+    build:
+      context: ..
+      dockerfile: Outloud.Common/Dockerfile
+      args:
+        version: ${NUGET_VERSION}
+        apikey: ${NUGET_API_KEY}
+    ports:
+      - 5003:5003
+      
+  outloud.common.tests:
+    image: outloud.common.tests
+    build:
+      context: ..
+      dockerfile: Outloud.Common/Dockerfile
+      args:
+        version: ${NUGET_VERSION}
+        apikey: ${NUGET_API_KEY}
+      target: test
+    environment:
+      WAIT_HOSTS: ''
+      WAIT_HOSTS_TIMEOUT: '60'
