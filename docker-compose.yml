@@ -23,29 +23,6 @@ services:
       WAIT_HOSTS: ''
       WAIT_HOSTS_TIMEOUT: '60'
 
-  outloud.log.service:
-    image: outloud.log.service
-    build:
-      context: ..
-      dockerfile: Outloud.LogService/Dockerfile
-    environment:
-      ASPNETCORE_URLS: 'http://+:5003'
-      WAIT_HOSTS: ''
-      WAIT_HOSTS_TIMEOUT: '60'
-    ports:
-      - 5003:5003
-      
-  outloud.log.service.tests:
-    image: outloud.log.service.tests
-    build:
-      context: ..
-      dockerfile: Outloud.LogService/Dockerfile
-      target: test
-    environment:
-      ASPNETCORE_URLS: 'http://+:5003'
-      WAIT_HOSTS: ''
-      WAIT_HOSTS_TIMEOUT: '60'
-
   outloud.common:
     image: outloud.common
     build:
