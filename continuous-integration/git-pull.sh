@@ -2,7 +2,7 @@
 
 CURRENT_PROJECT=$1
 cd ..
-REPOSITORIES=(Outloud.QuizService Outloud.LogService Outloud.Common)
+REPOSITORIES=(Outloud.QuizService Outloud.Common)
 for REPOSITORY in ${REPOSITORIES[*]}
 do
     if [ "$CURRENT_PROJECT" != "$REPOSITORY" ] ; then
