@@ -20,3 +20,7 @@ echo -e "\n"
 echo "### Publishing"
 ./docker-publish.sh $IMAGE_NAME $REGISTRY $BRANCH
 echo -e "\n"
+
+echo "### Cleaning"
+./docker-clean.sh $ENVIRONMENT
+echo -e "\n"
