@@ -1,4 +1,11 @@
 # Hello world!
+## Running the whole app
+0. Requirements:
+- docker 18.06 or above with compose 1.22 or above
+1. Open terminal and hit:
+```sh
+docker-compose up
+```
 ## Adding a new Component
 1. Update *git-pull.sh* file with new Component as follows:
 ```sh

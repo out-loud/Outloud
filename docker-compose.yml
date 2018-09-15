@@ -1,48 +1,10 @@
 version: '3.4'
 services:
   outloud.quiz.service:
-    image: outloud.quiz.service
-    build:
-      context: ..
-      dockerfile: Outloud.QuizService/Dockerfile
+    image: outloud/outloud.quiz.service
     environment:
       ASPNETCORE_URLS: 'http://+:5002'
       WAIT_HOSTS: ''
       WAIT_HOSTS_TIMEOUT: '60'
     ports:
       - 5002:5002
-
-  outloud.quiz.service.tests:
-    image: outloud.quiz.service.tests
-    build:
-      context: ..
-      dockerfile: Outloud.QuizService/Dockerfile
-      target: test
-    environment:
-      ASPNETCORE_URLS: 'http://+:5002'
-      WAIT_HOSTS: ''
-      WAIT_HOSTS_TIMEOUT: '60'
-
-  outloud.common:
-    image: outloud.common
-    build:
-      context: ..
-      dockerfile: Outloud.Common/Dockerfile
-      args:
-        version: ${NUGET_VERSION}
-        apikey: ${NUGET_API_KEY}
-    ports:
-      - '5003:5003'
-      
-  outloud.common.tests:
-    image: outloud.common.tests
-    build:
-      context: ..
-      dockerfile: Outloud.Common/Dockerfile
-      args:
-        version: ${NUGET_VERSION}
-        apikey: ${NUGET_API_KEY}
-      target: test
-    environment:
-      WAIT_HOSTS: ''
-      WAIT_HOSTS_TIMEOUT: '60'
