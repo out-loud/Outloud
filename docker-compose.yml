@@ -1,5 +1,14 @@
 version: '3.4'
 services:
+outloud.api:
+    image: outloud/outloud.api
+    environment:
+      ASPNETCORE_URLS: 'http://+:5000'
+      WAIT_HOSTS: ''
+      WAIT_HOSTS_TIMEOUT: '60'
+    ports:
+      - 5000:5000
+
   outloud.quiz.service:
     image: outloud/outloud.quiz.service
     environment:
