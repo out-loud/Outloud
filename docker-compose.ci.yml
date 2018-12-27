@@ -44,6 +44,28 @@ services:
       WAIT_HOSTS: ''
       WAIT_HOSTS_TIMEOUT: '60'
 
+  outloud.score.service:
+    image: outloud.score.service
+    build:
+      context: ..
+      dockerfile: Outloud.ScoreService/Dockerfile
+    environment:
+      ASPNETCORE_URLS: 'http://+:5003'
+      WAIT_HOSTS: ''
+      WAIT_HOSTS_TIMEOUT: '60'
+    ports:
+      - 5003:5003
+
+  outloud.score.service.tests:
+    image: outloud.score.service.tests
+    build:
+      context: ..
+      dockerfile: Outloud.ScoreService/Dockerfile
+      target: test
+    environment:
+      WAIT_HOSTS: ''
+      WAIT_HOSTS_TIMEOUT: '60'
+      
   outloud.common:
     image: outloud.common
     build:

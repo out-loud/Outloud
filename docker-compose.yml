@@ -17,3 +17,12 @@ outloud.api:
       WAIT_HOSTS_TIMEOUT: '60'
     ports:
       - 5002:5002
+
+  outloud.score.service:
+    image: outloud/outloud.score.service
+    environment:
+      ASPNETCORE_URLS: 'http://+:5003'
+      WAIT_HOSTS: ''
+      WAIT_HOSTS_TIMEOUT: '60'
+    ports:
+      - 5003:5003
