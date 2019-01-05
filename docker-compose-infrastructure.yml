@@ -1,0 +1,24 @@
+version: '3.4'
+services:
+  quiz-service-db:
+    image: microsoft/mssql-server-linux
+    restart: always
+    environment:
+      MSSQL_SA_PASSWORD: '1qazxsW@'
+      ACCEPT_EULA: 'Y'
+    ports:
+      - '1433:1433'
+
+  score-service-db:
+    image: microsoft/mssql-server-linux
+    restart: always
+    environment:
+      MSSQL_SA_PASSWORD: '1qazxsW@'
+      ACCEPT_EULA: 'Y'
+    ports:
+      - '1434:1433'
+
+  consul:
+    image: consul
+      ports:
+        - '8500:8500'

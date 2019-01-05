@@ -1,6 +1,6 @@
 version: '3.4'
 services:
-outloud.api:
+  outloud.api:
     image: outloud/outloud.api
     environment:
       ASPNETCORE_URLS: 'http://+:5000'
