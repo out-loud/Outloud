@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   outloud.api:
-    image: outloud/outloud.api
+    image: outloud/outloud.api:${tag}
     environment:
       ASPNETCORE_URLS: 'http://+:5000'
       WAIT_HOSTS: ''
@@ -10,7 +10,7 @@ services:
       - 5000:5000
 
   outloud.quiz.service:
-    image: outloud/outloud.quiz.service
+    image: outloud/outloud.quiz.service:${tag}
     environment:
       ASPNETCORE_URLS: 'http://+:5002'
       WAIT_HOSTS: ''
@@ -19,7 +19,7 @@ services:
       - 5002:5002
 
   outloud.score.service:
-    image: outloud/outloud.score.service
+    image: outloud/outloud.score.service:${tag}
     environment:
       ASPNETCORE_URLS: 'http://+:5003'
       WAIT_HOSTS: ''

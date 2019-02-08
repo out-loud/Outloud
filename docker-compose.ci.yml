@@ -74,8 +74,6 @@ services:
       args:
         version: ${NUGET_VERSION}
         apikey: ${NUGET_API_KEY}
-    ports:
-      - '5003:5003'
 
   outloud.common.tests:
     image: outloud.common.tests
